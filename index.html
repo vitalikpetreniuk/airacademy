@@ -28,6 +28,7 @@
 	<!-- Custom Browsers Color End -->
 
 	<link rel="stylesheet" href="css/main.min.css">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -45,6 +46,22 @@
 					<input type="tel" placeholder="Ваш телефон">
 					<hr>
 					<input type="submit" value="Получить">
+				</form>
+			</div>
+		</div>
+		<div id="signup-popup" class="air-popup">
+			<div class="ap-bg"></div>
+			<div class="ap-content">
+				<div class="popup-close">✕</div>
+				<h2 class="popup-title">Запишись на курс прямо <span>сейчас</span></h2>
+
+				<form action="/" method="get" class="air-popup-form">
+					<input type="text" placeholder="Ваше имя и фамилия">
+					<input type="tel" placeholder="Ваш телефон">
+					<input type="email" placeholder="Ваш E-mail">
+					<hr>
+					<div class="g-recaptcha" data-sitekey="6LfJQtoUAAAAAJY21chX4FxJxfu-17ga8uClxSVS"></div>
+					<input type="submit" value="Отправить заявку">
 				</form>
 			</div>
 		</div>
@@ -130,14 +147,21 @@
 						<div class="reason-icon"><img src="img/reason-icon1.png" alt="reason"></div>
 						<div class="reason-content">
 							<div class="reason-title">Самый выгодный канал маркетинговых инвестиций</div>
-							<div class="reason-info"><p>Наименьшая стоимость привлечения клиента в сравнении с другими платформами</p></div>
+							<div class="reason-info"><p>Наименьшая стоимость привлечения клиента в сравнении с другими соц.сетями</p></div>
 						</div>
 					</div>
 					<div class="reason">
 						<div class="reason-icon"><img src="img/reason-icon2.png" alt="reason"></div>
 						<div class="reason-content">
 							<div class="reason-title">Постоянный органический трафик</div>
-							<div class="reason-info"><p>YouTube-канал становится достойной альтернативой сайта</p></div>
+							<div class="reason-info"><p>YouTube - поисковая система №2 в мире, а канал является полноценной альтернативой сайта</p></div>
+						</div>
+					</div>
+					<div class="reason">
+						<div class="reason-icon"><img src="img/reason-icon4.png" alt="reason"></div>
+						<div class="reason-content">
+							<div class="reason-title">Канал коммуникации с самой платежеспособной аудиторией</div>
+							<div class="reason-info"><p>Ядро пользователей YouTube (56%) в возрасте 24-45 лет</p></div>
 						</div>
 					</div>
 					<div class="reason">
@@ -155,13 +179,6 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="reason">
-						<div class="reason-icon"><img src="img/reason-icon4.png" alt="reason"></div>
-						<div class="reason-content">
-							<div class="reason-title">Повышение узнаваемости и доверия к бренду</div>
-							<div class="reason-info"><p>Возможность показать свой бизнес с разных сторон и завоевать внимание клиентов</p></div>
 						</div>
 					</div>
 				</div>
@@ -198,7 +215,7 @@
 						</div>
 						<div class="result">
 							<div class="result-number">6.</div>
-							<div class="result-text">Все о платном и беспплатном продвижении: от настройки рекламных кампаний до основ influencer-маркетинга</div>
+							<div class="result-text">Все о платном и бесплатном продвижении: от настройки рекламных кампаний до правил работы с блогерами</div>
 						</div>
 					</div>
 				</div>
@@ -217,8 +234,8 @@
 							<h4 class="format-title">Время</h4>
 						</div>
 						<div class="format-text" style="display: block">
-							<p>Занятия проходят 2 раза в неделю.</p>
-							<p>В вечернее время с 19:00 до 21:30 (по киевскому времени)</p>
+							<p>Занятия проходят один раз в неделю по субботам.</p>
+							<p>С 10:00 до 15:00 (по киевскому времени)</p>
 						</div>
 					</div>
 					<div class="format">
@@ -635,11 +652,11 @@
 				<div class="mc-counter">
 					<div class="counter-subtitle">До конца акции</div>
 					<div class="counter">
-						<div class="counter-numbers">
-							<div class="cn-days cn-item"><span>2</span>дня</div>
-							<div class="cn-hours cn-item"><span>12</span>часов</div>
-							<div class="cn-minutes cn-item"><span>45</span>минут</div>
-							<div class="cn-seconds cn-item"><span>34</span>секунд</div>
+						<div class="counter-numbers" id="countdown">
+							<div class="cn-days cn-item"><span class="days">2</span>дня</div>
+							<div class="cn-hours cn-item"><span class="hours">12</span>часов</div>
+							<div class="cn-minutes cn-item"><span class="minutes">45</span>минут</div>
+							<div class="cn-seconds cn-item"><span class="seconds">34</span>секунд</div>
 						</div>
 					</div>
 				</div>
@@ -653,7 +670,7 @@
 					<div class="expert">
 						<div class="expert-image">
 							<img src="img/expert1.png" alt="expert">
-							<span class="expert-role">Популярный<br>блогер</span>
+							<span class="expert-role">Директор<br>AIR Academy</span>
 						</div>
 						<h4 class="expert-title">Вячеслав Полиновский</h4>
 						<div class="expert-content">
@@ -677,7 +694,7 @@
 					<div class="expert">
 						<div class="expert-image">
 							<img src="img/expert3.png" alt="expert">
-							<span class="expert-role">Youtube<br>эксперт</span>
+							<span class="expert-role">Youtube<br>Producer</span>
 						</div>
 						<h4 class="expert-title">Алексей Омельянович</h4>
 						<div class="expert-content">
@@ -689,7 +706,7 @@
 					<div class="expert">
 						<div class="expert-image">
 							<img src="img/expert4.png" alt="expert">
-							<span class="expert-role">Популярный<br>блогер</span>
+							<span class="expert-role">Youtube<br>эксперт</span>
 						</div>
 						<h4 class="expert-title">Анастасия Кузнецова</h4>
 						<div class="expert-content">
@@ -701,7 +718,7 @@
 					<div class="expert">
 						<div class="expert-image">
 							<img src="img/expert5.png" alt="expert">
-							<span class="expert-role">Youtube<br>эксперт</span>
+							<span class="expert-role">Video<br>Editor</span>
 						</div>
 						<h4 class="expert-title">Сергей Коцур</h4>
 						<div class="expert-content">
@@ -713,7 +730,7 @@
 					<div class="expert">
 						<div class="expert-image">
 							<img src="img/expert6.png" alt="expert">
-							<span class="expert-role">Популярный<br>блогер</span>
+							<span class="expert-role">YouTube<br>эксперт</span>
 						</div>
 						<h4 class="expert-title">Максим Яковлев</h4>
 						<div class="expert-content">
@@ -725,7 +742,7 @@
 					<div class="expert">
 						<div class="expert-image">
 							<img src="img/expert7.png" alt="expert">
-							<span class="expert-role"><span>Youtube эксперт</span></span>
+							<span class="expert-role"><span>Youtube<br>сценарист</span></span>
 						</div>
 						<h4 class="expert-title">Андрей Иолкин</h4>
 						<div class="expert-content">
@@ -901,28 +918,28 @@
 
 				<div class="cases">
 					<div class="case">
-						<img src="img/st1.png" alt="franch">
+						<img src="img/company7.png" alt="pepsi">
 					</div>
 					<div class="case">
-						<img src="img/st2.jpg" alt="citrus">
+						<img src="img/company8.png" alt="suzuki">
 					</div>
 					<div class="case">
-						<img src="img/st3.jpg" alt="avon">
+						<img src="img/company3.png" alt="canon">
 					</div>
 					<div class="case">
-						<img src="img/st4.jpg" alt="cosmetics">
+						<img src="img/company4.png" alt="danone">
 					</div>
 					<div class="case">
-						<img src="img/st5.jpg" alt="crown">
+						<img src="img/company2.png" alt="arsenal">
 					</div>
 					<div class="case">
-						<img src="img/st6.jpg" alt="man">
+						<img src="img/company5.png" alt="mastercard">
 					</div>
 					<div class="case">
-						<img src="img/st7.jpg" alt="pipl">
+						<img src="img/company1.png" alt="agusha">
 					</div>
 					<div class="case">
-						<img src="img/st8.jpg" alt="yacht travel">
+						<img src="img/company6.png" alt="panasonic">
 					</div>
 				</div>
 			</div>
