@@ -28,7 +28,6 @@
 	<!-- Custom Browsers Color End -->
 
 	<link rel="stylesheet" href="css/main.min.css">
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -991,57 +990,6 @@
 				</div>
 				<div class="fc-map">
 					<div id="map" style="height: 470px;"></div>
-					<script>
-						var map;
-						function initMap() {
-
-							var myStyles =[
-								{
-									featureType: "poi",
-									elementType: "labels",
-									stylers: [
-										{ visibility: "off" }
-									]
-								}
-							];
-
-							map = new google.maps.Map(
-									document.getElementById('map'),
-									{
-										center: new google.maps.LatLng(50.470972, 30.476541),
-										zoom: 15,
-										styles: myStyles
-									});
-
-							var iconBase =
-									'http://md.ninesquares.biz/air-academy/img/';
-
-							var icons = {
-								info: {
-									icon: iconBase + 'map-marker-small.png'
-								}
-							};
-
-							var features = [
-								{
-									position: new google.maps.LatLng(50.470972, 30.476541),
-									type: 'info'
-								}
-							];
-
-							// Create markers.
-							for (var i = 0; i < features.length; i++) {
-								var marker = new google.maps.Marker({
-									position: features[i].position,
-									icon: icons[features[i].type].icon,
-									map: map
-								});
-							};
-						}
-					</script>
-					<script async defer
-							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy6FZXG8nrWxmh5VqRhAToLhM7biQuH70&callback=initMap">
-					</script>
 				</div>
 			</div>
 			<div class="footer-bottom">
@@ -1059,6 +1007,61 @@
 		</footer>
 
 	</div>
+
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<script>
+		var map;
+		function initMap() {
+
+			var myStyles =[
+				{
+					featureType: "poi",
+					elementType: "labels",
+					stylers: [
+						{ visibility: "off" }
+					]
+				}
+			];
+
+			map = new google.maps.Map(
+					document.getElementById('map'),
+					{
+						center: new google.maps.LatLng(50.470972, 30.476541),
+						zoom: 15,
+						styles: myStyles
+					});
+
+			var iconBase =
+					'http://md.ninesquares.biz/air-academy/img/';
+
+			var icons = {
+				info: {
+					icon: iconBase + 'map-marker-small.png'
+				}
+			};
+
+			var features = [
+				{
+					position: new google.maps.LatLng(50.470972, 30.476541),
+					type: 'info'
+				}
+			];
+
+			// Create markers.
+			for (var i = 0; i < features.length; i++) {
+				var marker = new google.maps.Marker({
+					position: features[i].position,
+					icon: icons[features[i].type].icon,
+					map: map
+				});
+			};
+		}
+	</script>
+	<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy6FZXG8nrWxmh5VqRhAToLhM7biQuH70&callback=initMap">
+	</script>
 
 	<script src="js/scripts.min.js"></script>
 </body>
